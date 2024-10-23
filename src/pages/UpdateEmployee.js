@@ -96,7 +96,7 @@ const UpdateEmployee = () => {
         return errors;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         const validationErrors = validateForm();
         if (Object.keys(validationErrors).length > 0) {
@@ -106,7 +106,7 @@ const UpdateEmployee = () => {
             setErrors({});
             
             if(!id){
-                dispatch(addEmployee(formData))
+               await dispatch(addEmployee(formData))
                 setFormData({
                     fullName: "",
                     email: "",
@@ -117,14 +117,14 @@ const UpdateEmployee = () => {
             })
             navigate('/')
             }else{
-                dispatch(updateEmployee(id,formData))  
+               await dispatch(updateEmployee(id,formData))  
                 navigate('/')
             }
            
         }
     };
 
-   console.log(loading)
+   //console.log(loading)
 
 
 
@@ -137,7 +137,7 @@ const UpdateEmployee = () => {
             (
             <div>
             <div className="text-xl flex justify-center font-bold">{formData.fullName}</div>
-            <div className="flex justify-center"> {formData.image ? <img className="w-[100px]" src={formData.image} alt="my_photo"/>:''}</div>
+            <div className="flex justify-center"> {formData.image ? <img className="w-[100px]" src={formData.image} alt="notfound"/>:''}</div>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label className="block text-gray-700">Full Name</label>

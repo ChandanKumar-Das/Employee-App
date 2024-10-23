@@ -37,7 +37,8 @@ export const addEmployee = (employee) => async (dispatch)=> {
         console.log(response)
         let addEmployeeData = response.data
         dispatch({ type:ADD_EMPLOYEE, payload: addEmployeeData})
-        dispatch(fetchEmployees())
+        //dispatch(fetchEmployees())
+        //return addEmployeeData
     }catch(error){
         console.log(error)
     }
@@ -48,8 +49,10 @@ export const updateEmployee = (id,employee) => async (dispatch) =>{
         const response = await axios.put(API_URL+`/employee-update/${id}`,employee )
         console.log(response)
         let updateEmployeeData = response.data
-        dispatch({ type:ADD_EMPLOYEE, payload: updateEmployeeData})
-        dispatch(fetchEmployees())
+        console.log('updateEmployeeData:-' , updateEmployeeData)
+        dispatch({ type:ADD_EMPLOYEE,  payload: updateEmployeeData,})
+        //dispatch(fetchEmployees())
+        //return updateEmployeeData;
     }catch(error){
         console.log(error)
     }

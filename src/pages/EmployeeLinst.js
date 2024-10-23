@@ -48,7 +48,7 @@ const EmployeeList = () => {
         navigate("/add-employee")
       }
 
-
+console.log('EmployeeData:-',employees)
 
     return (
 

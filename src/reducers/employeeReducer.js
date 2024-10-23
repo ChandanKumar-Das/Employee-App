@@ -39,9 +39,7 @@ const employeeReducer = (state = initialState, action) =>{
         case UPDATE_EMPLOYEE:   
         return {
             ...state,
-            employee: state.employee.map((user) =>
-              user.id === action.payload.userId ? { ...user, ...action.payload.data } : user
-            ),
+            employee: state.employee.map((user) => user.id === action.payload.userId ? { ...user, ...action.payload.data } : user),
             loading: false,
         };
 
