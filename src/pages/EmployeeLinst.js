@@ -95,7 +95,7 @@ console.log('EmployeeData:-',employees)
                         <td className="border px-4 py-2">{employee.phone}</td>
                         <td className="border px-4 py-2">{employee.salary}</td>
                         <td className="border px-4 py-2">{employee.age}</td>
-                        <td className="border px-4 flex py-2">
+                        <td className="px-4 flex py-2">
                           <button
                             onClick={() => handelEditClick(employee)}
                             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded"
