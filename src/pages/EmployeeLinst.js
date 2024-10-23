@@ -67,51 +67,54 @@ console.log('EmployeeData:-',employees)
 
             {loading ? <FullPageLoader/> : employees.length ?
              (
-            <table className="min-w-full mt-2 bg-white border border-gray-200">
-                <thead>
+                <div className="overflow-x-auto">
+                <table className="min-w-full mt-2 bg-white border border-gray-200">
+                  <thead>
                     <tr>
-                        <th className="px-4 py-2 border">photo</th>
-                        <th className="px-4 py-2 border">Name</th>
-                        <th className="px-4 py-2 border">Email</th>
-                        <th className="px-4 py-2 border">Phone</th>
-                        <th className="px-4 py-2 border">Salary</th>
-                        <th className="px-4 py-2 border">Age</th>
-                        <th className="px-4 py-2 border">Actions</th>
+                      <th className="px-4 py-2 border">Photo</th>
+                      <th className="px-4 py-2 border">Name</th>
+                      <th className="px-4 py-2 border">Email</th>
+                      <th className="px-4 py-2 border">Phone</th>
+                      <th className="px-4 py-2 border">Salary</th>
+                      <th className="px-4 py-2 border">Age</th>
+                      <th className="px-4 py-2 border">Actions</th>
                     </tr>
-                </thead>
-                <tbody>
+                  </thead>
+                  <tbody>
                     {employees.map((employee) => (
-                        <tr key={employee._id}>
-                            <td className="border px-4 py-2">
-                            <img 
-                                src={employee.image} 
-                                alt={employee.fullName} 
-                                className="w-20 h-16 object-cover rounded" 
-                            />
+                      <tr key={employee._id}>
+                        <td className="border px-4 py-2">
+                          <img
+                            src={employee.image}
+                            alt={employee.fullName}
+                            className="w-20 h-16 object-cover rounded"
+                          />
                         </td>
-                            <td className="border px-4 py-2">{employee.fullName}</td>
-                            <td className="border px-4 py-2">{employee.email}</td>
-                            <td className="border px-4 py-2">{employee.phone}</td>
-                            <td className="border px-4 py-2">{employee.salary}</td>
-                            <td className="border px-4 py-2">{employee.age}</td>
-                            <td className="border px-4 py-2">
-                                <button
-                                    onClick={()=>handelEditClick(employee)}
-                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded"
-                                >
-                                    Edit
-                                </button>
-                                <button
-                                    onClick={()=>handelDeleteClick(employee._id)}
-                                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded ml-2"
-                                >
-                                    Delete
-                                </button>
-                            </td>
-                        </tr>
+                        <td className="border px-4 py-2">{employee.fullName}</td>
+                        <td className="border px-4 py-2">{employee.email}</td>
+                        <td className="border px-4 py-2">{employee.phone}</td>
+                        <td className="border px-4 py-2">{employee.salary}</td>
+                        <td className="border px-4 py-2">{employee.age}</td>
+                        <td className="border px-4 flex py-2">
+                          <button
+                            onClick={() => handelEditClick(employee)}
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            onClick={() => handelDeleteClick(employee._id)}
+                            className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded ml-2"
+                          >
+                            Delete
+                          </button>
+                        </td>
+                      </tr>
                     ))}
-                </tbody>
-            </table>
+                  </tbody>
+                </table>
+              </div>
+              
            ) :<div className='flex justify-center item-center font-bold'> No data... Add Employee</div> }
             
         </div>
