@@ -41,6 +41,7 @@ export const addEmployee = (employee) => async (dispatch)=> {
         //return addEmployeeData
     }catch(error){
         console.log(error)
+        alert('Email alredy exist')
     }
 }
 
@@ -55,6 +56,7 @@ export const updateEmployee = (id,employee) => async (dispatch) =>{
         //return updateEmployeeData;
     }catch(error){
         console.log(error)
+        alert('Email alredy exist')
     }
 }
 
