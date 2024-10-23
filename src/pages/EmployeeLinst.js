@@ -70,12 +70,13 @@ const EmployeeList = () => {
             <table className="min-w-full mt-2 bg-white border border-gray-200">
                 <thead>
                     <tr>
-                        <th className="px-4 py-2">photo</th>
-                        <th className="px-4 py-2">Name</th>
-                        <th className="px-4 py-2">Email</th>
-                        <th className="px-4 py-2">Phone</th>
-                        <th className="px-4 py-2">Salary</th>
-                        <th className="px-4 py-2">Actions</th>
+                        <th className="px-4 py-2 border">photo</th>
+                        <th className="px-4 py-2 border">Name</th>
+                        <th className="px-4 py-2 border">Email</th>
+                        <th className="px-4 py-2 border">Phone</th>
+                        <th className="px-4 py-2 border">Salary</th>
+                        <th className="px-4 py-2 border">Age</th>
+                        <th className="px-4 py-2 border">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -92,6 +93,7 @@ const EmployeeList = () => {
                             <td className="border px-4 py-2">{employee.email}</td>
                             <td className="border px-4 py-2">{employee.phone}</td>
                             <td className="border px-4 py-2">{employee.salary}</td>
+                            <td className="border px-4 py-2">{employee.age}</td>
                             <td className="border px-4 py-2">
                                 <button
                                     onClick={()=>handelEditClick(employee)}
